@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<title>Illinois Homework & Information Websites</title>
+	<link rel="icon" href="resources/starterV2.ico" type="image/x-icon">
+	<link rel="stylesheet" href="style.css">
+	<script src="moment.js"></script>
+	<style>
+		body {
+			background-color: #3F4A52;
+		}
+	</style>
+
+	<style type="text/css">
+		#topMenu {
+			top: 0;
+			right: 0px;
+			width: 80px;
+			position: fixed;
+			padding: 10px;
+			font-weight: bold;
+			background: #3F4A52;
+			opacity: 0;
+		}
+
+		#container {
+			height: 100%;
+			width: 100%;
+			display: flex;
+		}
+
+		#linksContainer {
+			margin-left: 1em;
+		}
+
+		#column {
+			display: block;
+		}
+
+		a, b, h2 {
+			text-decoration: none;
+			color: white;
+		}
+
+		a:hover {
+			color: #66ccff;
+		}
+
+		/* Image cannot be properly displayed on Android devices, setting up a dark background instead */
+		body {
+			background-image: url('resources/M200.jpg'); 
+			background-repeat: no-repeat;
+			background-position: center;
+			background-attachment: fixed;
+
+			-webkit-background-size: 100%; 
+			-moz-background-size: 100%; 
+			-o-background-size: 100%; 
+			background-size: 100%; 
+			-webkit-background-size: cover; 
+			-moz-background-size: cover; 
+			-o-background-size: cover; 
+			background-size: cover;
+		}
+
+		/* Used on background fadein */
+		#bodyCover {
+			top: 0px;
+			right: 0px;
+			bottom: 0px;
+			left: 0px;
+			background-color: #777777;
+			opacity: 1;
+			z-index: -1;
+		}
+
+		/* Hide vertical scroll bar */
+		::-webkit-scrollbar {
+			width: 0px;
+		}
+	</style>
+
+	<div id="topMenu">
+		<button onclick='goToAndHighlight("top");'>Top</button>
+		<hr>
+<!-- DIV -->
+		<hr>
+	</div>
+	<div id="bodyCover"></div>
+
+	<div style="height:0px">
+	</div>
+</head>
+
+<body id="body">
+	<div class="general" style="margin-left: 1em; user-select: none;">
+		<div class="title">
+			<h2>Illinois Homework & Information Websites</h2>
+		</div>
+		<div id="clock" class="light">
+			<div class="display">
+				<div class="digits">
+					<div id="h1" class="zero">
+						<span class="d1"></span>
+						<span class="d2"></span>
+						<span class="d3"></span>
+						<span class="d4"></span>
+						<span class="d5"></span>
+						<span class="d6"></span>
+						<span class="d7"></span>
+					</div>
+					<div id="h2" class="zero">
+						<span class="d1"></span>
+						<span class="d2"></span>
+						<span class="d3"></span>
+						<span class="d4"></span>
+						<span class="d5"></span>
+						<span class="d6"></span>
+						<span class="d7"></span>
+					</div>
+					<div class="dots"></div>
+					<div id="m1" class="zero">
+						<span class="d1"></span>
+						<span class="d2"></span>
+						<span class="d3"></span>
+						<span class="d4"></span>
+						<span class="d5"></span>
+						<span class="d6"></span>
+						<span class="d7"></span>
+					</div>
+					<div id="m2" class="zero">
+						<span class="d1"></span>
+						<span class="d2"></span>
+						<span class="d3"></span>
+						<span class="d4"></span>
+						<span class="d5"></span>
+						<span class="d6"></span>
+						<span class="d7"></span>
+					</div>
+					<div class="dots"></div>
+					<div id="s1" class="zero">
+						<span class="d1"></span>
+						<span class="d2"></span>
+						<span class="d3"></span>
+						<span class="d4"></span>
+						<span class="d5"></span>
+						<span class="d6"></span>
+						<span class="d7"></span>
+					</div>
+					<div id="s2" class="zero">
+						<span class="d1"></span>
+						<span class="d2"></span>
+						<span class="d3"></span>
+						<span class="d4"></span>
+						<span class="d5"></span>
+						<span class="d6"></span>
+						<span class="d7"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="container">
+<!-- DIV -->
+		</div><hr><hr>
+
+		<!-- <div id="" style="height: 100%; width: 100%; display: flex; flex-wrap: wrap; user-select: none;">
+			<div id="row" style="width: 100%; display: flex;">
+				<div id="column">
+					<b></b><br>
+					<div id="linksContainer">
+						<a href=""></a><br>
+						<a href=""></a><br>
+						<a href=""></a><br>
+						<a href=""></a><br>
+					</div>
+				</div>
+				... Five columns per line
+			</div><div style="width:100%; height: 10px"></div>
+		</div><hr> -->
+
+<!-- DIV -->
+
+	<div style="height:1000px">
+	</div>
+
+	<script type="text/javascript">
+		// Highlight corresponding section on navigating
+		function goToAndHighlight(element) {
+			var originalColor = "transparent";
+			var changeToColor = '#6495ED';
+			var changeToDuration = 100;
+			var hightlightDuration = 800;
+			var changeBackDuration = 200;
+			// Scroll to position
+			document.querySelector("#" + element).scrollIntoView({ behavior: "smooth", block: "center"});
+			// Hightlight struct
+			document.getElementById(element).animate([{background: changeToColor}],{duration: changeToDuration});
+			setTimeout(function(){
+				document.getElementById(element).style.background = changeToColor;
+				setTimeout(function(){
+					document.getElementById(element).animate([{background: originalColor}],{duration: changeBackDuration});
+					setTimeout(function(){
+						document.getElementById(element).style.background = originalColor;
+					}, changeBackDuration);
+				}, hightlightDuration);
+			}, changeToDuration); 
+		}
+
+		window.onload = function() {
+			// Update timer when page is loaded
+			updateTime();
+			// Do fadein when page is loaded
+			var fadeInDuration = 400;
+			document.getElementById("bodyCover").animate([{opacity: 0}], {duration: fadeInDuration})
+			document.getElementById("topMenu").animate([{opacity: 1}], {duration: fadeInDuration})
+			setTimeout(function(){
+				document.getElementById("bodyCover").style.opacity = 0;
+				document.getElementById("topMenu").style.opacity = 1;
+			}, fadeInDuration);
+		}
+
+		// Timer update every second
+		window.setInterval(updateTime, 500)
+
+		// Timer update function
+		var digitList = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+		function updateTime() {
+			var time = moment().format("HHmmss");
+			document.getElementById("h1").className = digitList[time[0]];
+			document.getElementById("h2").className = digitList[time[1]];
+			document.getElementById("m1").className = digitList[time[2]];
+			document.getElementById("m2").className = digitList[time[3]];
+			document.getElementById("s1").className = digitList[time[4]];
+			document.getElementById("s2").className = digitList[time[5]];
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<title>Illinois Homework & Information Websites</title>
+	<link rel="icon" href="resources/starterV2.ico" type="image/x-icon">
+	<link rel="stylesheet" href="style.css">
+	<script src="moment.js"></script>
+	<style>
+		body {
+			background-color: #3F4A52;
+		}
+	</style>
+
+	<style type="text/css">
+		#topMenu {
+			top: 0;
+			right: 0px;
+			width: 80px;
+			position: fixed;
+			padding: 10px;
+			font-weight: bold;
+			background: #3F4A52;
+			opacity: 0;
+		}
+
+		#container {
+			height: 100%;
+			width: 100%;
+			display: flex;
+		}
+
+		#linksContainer {
+			margin-left: 1em;
+		}
+
+		#column {
+			display: block;
+		}
+
+		a, b, h2 {
+			text-decoration: none;
+			color: white;
+		}
+
+		a:hover {
+			color: #66ccff;
+		}
+
+		/* Image cannot be properly displayed on Android devices, setting up a dark background instead */
+		body {
+			background-image: url('resources/M200.jpg'); 
+			background-repeat: no-repeat;
+			background-position: center;
+			background-attachment: fixed;
+
+			-webkit-background-size: 100%; 
+			-moz-background-size: 100%; 
+			-o-background-size: 100%; 
+			background-size: 100%; 
+			-webkit-background-size: cover; 
+			-moz-background-size: cover; 
+			-o-background-size: cover; 
+			background-size: cover;
+		}
+
+		/* Used on background fadein */
+		#bodyCover {
+			top: 0px;
+			right: 0px;
+			bottom: 0px;
+			left: 0px;
+			background-color: #777777;
+			opacity: 1;
+			z-index: -1;
+		}
+
+		/* Hide vertical scroll bar */
+		::-webkit-scrollbar {
+			width: 0px;
+		}
+	</style>
+
+	<div id="topMenu">
+		<button onclick='goToAndHighlight("top");'>Top</button>
+		<hr>
+		<button onclick='goToAndHighlight("CS");'>CS</button><br>
+		<button onclick='goToAndHighlight("ECE");'>ECE</button><br>
+		<button onclick='goToAndHighlight("MATH");'>MATH</button><br>
+		<button onclick='goToAndHighlight("OTHER");'>OTHER</button><br>
+		<hr>
+	</div>
+	<div id="bodyCover"></div>
+
+	<div style="height:0px">
+	</div>
+</head>
+
+<body id="body">
+	<div class="general" style="margin-left: 1em; user-select: none;">
+		<div class="title">
+			<h2>Illinois Homework & Information Websites</h2>
+		</div>
+		<div id="clock" class="light">
+			<div class="display">
+				<div class="digits">
+					<div id="h1" class="zero">
+						<span class="d1"></span>
+						<span class="d2"></span>
+						<span class="d3"></span>
+						<span class="d4"></span>
+						<span class="d5"></span>
+						<span class="d6"></span>
+						<span class="d7"></span>
+					</div>
+					<div id="h2" class="zero">
+						<span class="d1"></span>
+						<span class="d2"></span>
+						<span class="d3"></span>
+						<span class="d4"></span>
+						<span class="d5"></span>
+						<span class="d6"></span>
+						<span class="d7"></span>
+					</div>
+					<div class="dots"></div>
+					<div id="m1" class="zero">
+						<span class="d1"></span>
+						<span class="d2"></span>
+						<span class="d3"></span>
+						<span class="d4"></span>
+						<span class="d5"></span>
+						<span class="d6"></span>
+						<span class="d7"></span>
+					</div>
+					<div id="m2" class="zero">
+						<span class="d1"></span>
+						<span class="d2"></span>
+						<span class="d3"></span>
+						<span class="d4"></span>
+						<span class="d5"></span>
+						<span class="d6"></span>
+						<span class="d7"></span>
+					</div>
+					<div class="dots"></div>
+					<div id="s1" class="zero">
+						<span class="d1"></span>
+						<span class="d2"></span>
+						<span class="d3"></span>
+						<span class="d4"></span>
+						<span class="d5"></span>
+						<span class="d6"></span>
+						<span class="d7"></span>
+					</div>
+					<div id="s2" class="zero">
+						<span class="d1"></span>
+						<span class="d2"></span>
+						<span class="d3"></span>
+						<span class="d4"></span>
+						<span class="d5"></span>
+						<span class="d6"></span>
+						<span class="d7"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="container">
+			<div id="column" style="width: 20%; user-select: none;">
+				<b>A-C</b><br>
+				<div id="linksContainer">
+					<a href="https://armoryhouseuiuc.residentportal.com/resident_portal/?module=authentication&action=view_login">Armory House</a><br>
+					<a href="https://registrar.illinois.edu/academic-records/dars-audit/">Audit</a><br>
+					<a href="https://banner.apps.uillinois.edu/StudentRegistrationSSB/ssb/registration?mepCode=1UIUC">Banner</a><br>
+					<a href="https://illinoisedu.instructure.com/">Canvas</a><br>
+					<a href="https://cbtf.engr.illinois.edu/">CBTF</a><br>
+					<a href="https://compass2g.illinois.edu/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1">Compass</a><br>
+				</div>
+			</div>
+
+			<div id="column" style="width: 20%; user-select: none;">
+				<b>C-G</b><br>
+				<div id="linksContainer">
+					<a href="https://courses.illinois.edu/">Course Explorer</a><br>
+					<a href="https://piazza.com/class/ikbpc6y3ui61u6/">ECE Advicing Piazza</a><br>
+					<a href="http://madebyevan.com/fsm/">FSM Generator</a><br>
+					<a href="https://github.com">Github</a><br>
+					<a href="https://github-dev.cs.illinois.edu/">Github Enterprise</a><br>
+					<a href="https://gitlab.engr.illinois.edu/">Gitlab</a><br>
+				</div>
+			</div>
+
+			<div id="column" style="width: 20%; user-select: none;">
+				<b>G-M</b><br>
+				<div id="linksContainer">
+					<a href="https://www.google.com/">Google</a><br>
+					<a href="https://translate.google.com/">Google Translate</a><br>
+					<a href="https://leetcode.com/problemset/all/">Leetcode</a><br>
+					<a href="http://gen.lib.rus.ec/">Library Genesis</a><br>
+					<a href="https://mediaspace.illinois.edu/">Mediaspace</a><br>
+					<a href="https://learn.illinois.edu">Moodle</a><br>
+				</div>
+			</div>
+
+			<div id="column" style="width: 20%; user-select: none;">
+				<b>O-S</b><br>
+				<div id="linksContainer">
+					<a href="https://www.office.com/?auth=2">Office 365</a><br>
+					<a href="https://one.illinois.edu/">OneIllinois</a><br>
+					<a href="https://outlook.office.com/mail/inbox">Outlook</a><br>
+					<a href="https://piazza.com">Piazza</a><br>
+					<a href="https://prairielearn.engr.illinois.edu/pl/">PrairieLearn</a><br>
+					<a href="https://apps.uillinois.edu/">Self Service</a><br>
+				</div>
+			</div>
+
+			<div id="column" style="width: 20%; user-select: none;">
+				<b>T-Z</b><br>
+				<div id="linksContainer">
+					<a href="https://americancampus.force.com/s/login/">Tower@3rd</a><br>
+					<a href="https://webstore.illinois.edu/home/">Wordpress</a><br>
+					<a href="https://b-ok.cc/">ZLibrary</a><br>
+				</div>
+			</div>
+		</div><hr><hr>
+
+		<!-- <div id="" style="height: 100%; width: 100%; display: flex; flex-wrap: wrap; user-select: none;">
+			<div id="row" style="width: 100%; display: flex;">
+				<div id="column">
+					<b></b><br>
+					<div id="linksContainer">
+						<a href=""></a><br>
+						<a href=""></a><br>
+						<a href=""></a><br>
+						<a href=""></a><br>
+					</div>
+				</div>
+				... Five columns per line
+			</div><div style="width:100%; height: 10px"></div>
+		</div><hr> -->
+
+		<div id="CS" style="height: 100%; width: 100%; display: flex; flex-wrap: wrap; user-select: none;">
+			<div id="row" style="width: 100%; display: flex;">
+				<div id="column" style="width: 20%">
+					<b>CS 125</b><br>
+					<div id="linksContainer">
+						<a href="https://cs125.cs.illinois.edu/">Course Website</a><br>
+						<a href="https://cs125-forum.cs.illinois.edu/login">Forum</a><br>
+						<a href="https://prairielearn.engr.illinois.edu/pl/">PrairieLearn</a><br>
+					</div>
+				</div>
+				<div id="column" style="width: 20%">
+					<b>CS 173</b><br>
+					<div id="linksContainer">
+						<a href="https://courses.grainger.illinois.edu/cs173/sp2020/A-lecture/">Course Website</a><br>
+						<a href="https://www.gradescope.com/courses/85043">Gradescope</a><br>
+						<a href="https://learn.illinois.edu">Moodle</a><br>
+						<a href="https://piazza.com/class/k58lx8o4zmv23z">Piazza</a><br>
+					</div>
+				</div>
+				<div id="column" style="width: 20%">
+					<b>CS 223</b><br>
+					<div id="linksContainer">
+						<a href="https://cs233.github.io/">Course Website</a><br>
+						<a href="https://github-dev.cs.illinois.edu/">Github Enterprise</a><br>
+						<a href="https://learn.illinois.edu">Moodle</a><br>
+						<a href="https://prairielearn.engr.illinois.edu/pl/">PrairieLearn</a><br>
+					</div>
+				</div>
+				<div id="column" style="width: 20%">
+					<b>CS 225</b><br>
+					<div id="linksContainer">
+						<a href="https://fa20-cs241-grd-01.cs.illinois.edu/on-demand/login/">BroadWay</a><br>
+						<a href="https://courses.engr.illinois.edu/cs225/fa2020/">Course Website</a><br>
+						<a href="https://github-dev.cs.illinois.edu/">Github Enterprise</a><br>
+						<a href="https://piazza.com/class/kdtbgnmkrkl6rs">Piazza</a><br>
+						<a href="https://illinois.zoom.us/j/97632104970?pwd=TGtJSTBSSVFKcXdlOGQ5S05ZYW9FUT09">Zoom Lab</a><br>
+					</div>
+				</div>
+				<div id="column" style="width: 20%">
+					<b>CS 357</b><br>
+					<div id="linksContainer">
+						<a href="https://courses.grainger.illinois.edu/cs357/fa2020/">Course Website</a><br>
+						<a href="https://prairielearn.engr.illinois.edu/pl/">PrairieLearn</a><br>
+					</div>
+				</div>
+			</div><div style="width:100%; height: 10px"></div>
+		</div><hr>
+
+		<div id="ECE" style="height: 100%; width: 100%; display: flex; flex-wrap: wrap; user-select: none;">
+			<div id="row" style="width: 100%; display: flex;">
+				<div id="column" style="width: 20%">
+					<b>ECE 110</b><br>
+					<div id="linksContainer">
+						<a href="https://www.falstad.com/circuit/">Circult Simulator</a><br>
+						<a href="https://compass2g.illinois.edu/webapps/login/">Compass</a><br>
+						<a href="https://courses.grainger.illinois.edu/ece110">Course Website</a><br>
+						<a href="https://www.gradescope.com/courses/177435">Gradescope Group</a><br>
+						<a href="https://www.gradescope.com/courses/183183">Gradescope Individual</a><br>
+					</div>
+				</div>
+				<div id="column" style="width: 20%">
+					<b>ECE 120</b><br>
+					<div id="linksContainer">
+						<a href="https://wiki.illinois.edu/wiki/display/ece120/Home">Course Website</a><br>
+						<a href="https://www.gradescope.com/courses/236350">Gradescope</a><br>
+						<a href="https://prairielearn.engr.illinois.edu/pl/">PrairieLearn</a><br>
+						<a href="https://illinois.zoom.us/j/89615871026">Zoom Discussion (pw:120lecture)</a><br>
+					</div>
+				</div>
+				<div id="column" style="width: 20%">
+					<b>ECE 210</b><br>
+					<div id="linksContainer">
+						<a href="https://compass2g.illinois.edu/webapps/login/">Compass</a><br>
+						<a href="https://courses.engr.illinois.edu/ece210/">Course Website</a><br>
+						<a href="https://www.gradescope.com/courses/236757">Gradescope</a><br>
+						<a href="https://illinois.zoom.us/j/86410307237">Zoom Lecture (pw:ece210here)</a><br>
+					</div>
+				</div>
+				<div id="column" style="width: 20%">
+					<b>ECE 313</b><br>
+					<div id="linksContainer">
+						<a href="https://courses.grainger.illinois.edu/ece313/sp2021/">Course Website</a><br>
+						<a href="https://piazza.com/class/kk7eel1hbww5cm">Piazza</a><br>
+						<a href="https://illinois.zoom.us/j/82930400257?pwd=S1hVaVc4SW44cnIwY0wvdGFoR05VUT09">Zoom Lecture</a><br>
+					</div>
+				</div>
+				<div id="column" style="width: 20%">
+					<b>ECE 374</b><br>
+					<div id="linksContainer">
+						<a href="https://illinoisedu.instructure.com/courses/13237">Course Website</a><br>
+						<a href="https://www.gradescope.com/courses/295210">Gradescope</a><br>
+						<a href="https://piazza.com/class/ksewzvdwyogku">Piazza</a><br>
+						<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/">Practice Problems</a><br>
+					</div>
+				</div>
+			</div><div style="width:100%; height: 10px"></div>
+			<div id="row" style="width: 100%; display: flex;">
+				<div id="column" style="width: 20%">
+					<b>ECE 385</b><br>
+					<div id="linksContainer">
+						<a href="https://campuswire.com/c/G1B8B348F/feed">Campuswire</a><br>
+						<a href="https://wiki.illinois.edu/wiki/spaces/viewspace.action?key=ECE385Sp21">Course Website</a><br>
+						<a href="https://ece.illinois.edu/academics/ugrad/lab-kits/ece385">Parts Description</a><br>
+						<a href="https://www.twitch.tv/zuofucheng">Twitch Lecture</a><br>
+					</div>
+				</div>
+				<div id="column" style="width: 20%">
+					<b>ECE 391</b><br>
+					<div id="linksContainer">
+						<a href="https://courses.grainger.illinois.edu/ece391/sp2021/">Course Website</a><br>
+						<a href="https://my.engr.illinois.edu/labcheck">Labcheck</a><br>
+						<a href="https://echo360.org/">Lecture Recording</a><br>
+						<a href="https://piazza.com/class/kk627iyvvyfzh">Piazza</a><br>
+						<a href="https://illinois.zoom.us/j/87234120984?pwd=RE1OZVhDQmIrUDM0eDd3WFlUVGZOQT09">Zoom Discussion</a><br>
+					</div>
+				</div>
+				<div id="column" style="width: 20%">
+					<b>ECE 448</b><br>
+					<div id="linksContainer">
+						<a href="https://courses.grainger.illinois.edu/cs440/fa2021/">Course Website</a><br>
+						<a href="https://www.gradescope.com/courses/293236">Gradescope</a><br>
+						<a href="https://learn.illinois.edu/course/view.php?id=62019">Moodle</a><br>
+						<a href="https://piazza.com/class/ksl165r65nz5nn">Piazza</a><br>
+					</div>
+				</div>
+				<div id="column" style="width: 20%">
+					<b>ECE 449</b><br>
+					<div id="linksContainer">
+						<a href="https://campuswire.com/c/G81BE9550/feed">Campuswire</a><br>
+						<a href="https://lgui.cs.illinois.edu/course/CS446/F21">Course Website</a><br>
+						<a href="https://www.gradescope.com/courses/294025">Gradescope</a><br>
+						<a href="https://mediaspace.illinois.edu/channel/Fall%2B2021-CS446_ECE449%253A%2BMachine%2BLearning/225480583">Mediaspace Lecture</a><br>
+						<a href="https://illinois.zoom.us/j/84428766067?pwd=bFVNYXZ1d293U0JDb0xQYy96NjgxZz09">Zoom Lecture (pw:108210)</a><br>
+					</div>
+				</div>
+				<div id="column" style="width: 20%">
+					<b>ECE 486</b><br>
+					<div id="linksContainer">
+						<a href="https://compass2g.illinois.edu/webapps/blackboard/content/listContent.jsp?course_id=_61628_1&content_id=_5560606_1">Compass</a><br>
+						<a href="https://courses.grainger.illinois.edu/ece486/fa2021/">Course Website</a><br>
+						<a href="https://www.gradescope.com/courses/294312">Gradescope Homework</a><br>
+						<a href="https://www.gradescope.com/courses/299434">Gradescope Lab</a><br>
+						<a href="https://piazza.com/class/ksor77jixfa5ad">Piazza</a><br>
+						<a href="https://illinois.zoom.us/j/86509093791?pwd=LzJ0Z1pHenFhdU16N1AxRGZkcmdyUT09">Zoom Lecture</a><br>
+					</div>
+				</div>
+			</div><div style="width:100%; height: 10px"></div>
+		</div><hr>
+
+		<div id="MATH" style="height: 100%; width: 100%; display: flex; flex-wrap: wrap; user-select: none;">
+			<div id="row" style="width: 100%; display: flex;">
+				<div id="column" style="width: 20%">
+					<b>MATH 231&241</b><br>
+					<div id="linksContainer">
+						<a href="https://www.webassign.net/uiuc/login.html">Webassign</a><br>
+					</div>
+				</div>
+				<div id="column" style="width: 20%">
+					<b>MATH 286</b><br>
+					<div id="linksContainer">
+						<a href="https://piazza.com/class/k83tkqtz2fa7n6">Piazza</a><br>
+						<a href="https://www.webassign.net/uiuc/login.html">Webassign</a><br>
+					</div>
+				</div>
+				<div id="column" style="width: 20%">
+					<b>MATH 416</b><br>
+					<div id="linksContainer">
+						<a href="https://faculty.math.illinois.edu/~palbin/Math416.Spring2020/Hws.html">Homework</a><br>
+						<a href="https://piazza.com/class/k5xxity7qy36rs">Piazza</a><br>
+					</div>
+				</div>
+				<div id="column" style="width: 20%">
+					<b>MATH 444</b><br>
+					<div id="linksContainer">
+						<a href="https://learn.illinois.edu">Moodle</a><br>
+					</div>
+				</div>
+			</div><div style="width:100%; height: 10px"></div>
+		</div><hr>
+
+		<div id="OTHER" style="height: 100%; width: 100%; display: flex; flex-wrap: wrap; user-select: none;">
+			<div id="row" style="width: 100%; display: flex;">
+				<div id="column" style="width: 20%">
+					<b>LAS 101</b><br>
+					<div id="linksContainer">
+						<a href="https://learn.illinois.edu">Course Website</a><br>
+						<a href="https://illinois.digication.com/">ePortfolio</a><br>
+						<a href="https://etext.illinois.edu/">eText</a><br>
+					</div>
+				</div>
+				<div id="column" style="width: 20%">
+					<b>ESL 111&112</b><br>
+					<div id="linksContainer">
+						<a href="https://learn.illinois.edu">Course Website</a><br>
+						<a href="https://etext.illinois.edu/">eText</a><br>
+					</div>
+				</div>
+				<div id="column" style="width: 20%">
+					<b>SPED 117</b><br>
+					<div id="linksContainer">
+						<a href="https://learn.illinois.edu">Course Website</a><br>
+					</div>
+				</div>
+				<div id="column" style="width: 20%">
+					<b>STAT 200</b><br>
+					<div id="linksContainer">
+						<a href="http://courses.atlas.illinois.edu/fall2019/STAT200/">Course Website</a><br>
+					</div>
+				</div>
+				<div id="column" style="width: 20%">
+					<b>ANSC 207</b><br>
+					<div id="linksContainer">
+						<a href="https://compass2g.illinois.edu/webapps/login/">Course Website</a><br>
+						<a href="https://www.packback.co/">Packback</a><br>
+						<a href="https://ansc207fall2019.slack.com">Slack</a><br>
+					</div>
+				</div>
+			</div><div style="width:100%; height: 10px"></div>
+			<div id="row" style="width: 100%; display: flex;">
+				<div id="column" style="width: 20%">
+					<b>PHYS 213</b><br>
+					<div id="linksContainer">
+						<a href="https://courses.physics.illinois.edu/phys213">Course Website</a><br>
+						<a href="https://www.gradescope.com/courses/145143">Gradescope</a><br>
+						<a href="https://courses.physics.illinois.edu/phys213/su2020/secure/online-lectures.html">Media Space Lecture</a><br>
+						<a href="https://piazza.com/class/kcdw8xinvm86dk">Piazza</a><br>
+						<a href="https://smart.physics.illinois.edu/Course?enrollmentID=86814">Smart Illinois</a><br>
+					</div>
+				</div>
+				<div id="column" style="width: 20%">
+					<b>PHYS 214</b><br>
+					<div id="linksContainer">
+						<a href="https://courses.physics.illinois.edu/phys214">Course Website</a><br>
+						<a href="https://www.gradescope.com/courses/140124">Gradescope</a><br>
+						<a href="https://courses.physics.illinois.edu/phys214/su2020/secure/online-lectures.html">Media Space Lecture</a><br>
+						<a href="https://piazza.com/class/kb7134kv8o66a2">Piazza</a><br>
+						<a href="https://smart.physics.illinois.edu/Course?enrollmentID=87232">Smart Illinois</a><br>
+					</div>
+				</div>
+				<div id="column" style="width: 20%">
+					<b>CLCV 224</b><br>
+					<div id="linksContainer">
+						<a href="https://referenceworks-brillonline-com.proxy2.library.illinois.edu/browse/brill-s-new-pauly">Brill's New Pauly Online</a><br>
+						<a href="https://www.library.illinois.edu/litlang/classics/">Classics Library</a><br>
+						<a href="https://illinoisedu.instructure.com/courses/7441">Course Website</a><br>
+						<a href="https://www-oxfordreference-com.proxy2.library.illinois.edu/view/10.1093/acref/9780199545568.001.0001/acref-9780199545568">Oxford Classical Dictionary</a><br>
+						<a href="https://i-share-uiu.primo.exlibrisgroup.com/discovery/search?vid=01CARLI_UIU:CARLI_UIU&lang=en">UIUC Library</a><br>
+					</div>
+				</div>
+				<div id="column" style="width: 20%">
+					<b>RST 242</b><br>
+					<div id="linksContainer">
+						<a href="https://compass2g.illinois.edu/webapps/login/">Course Website</a><br>
+					</div>
+				</div>
+			</div><div style="width:100%; height: 10px"></div>
+		</div><hr>
+
+	<div style="height:1000px">
+	</div>
+
+	<script type="text/javascript">
+		// Highlight corresponding section on navigating
+		function goToAndHighlight(element) {
+			var originalColor = "transparent";
+			var changeToColor = '#6495ED';
+			var changeToDuration = 100;
+			var hightlightDuration = 800;
+			var changeBackDuration = 200;
+			// Scroll to position
+			document.querySelector("#" + element).scrollIntoView({ behavior: "smooth", block: "center"});
+			// Hightlight struct
+			document.getElementById(element).animate([{background: changeToColor}],{duration: changeToDuration});
+			setTimeout(function(){
+				document.getElementById(element).style.background = changeToColor;
+				setTimeout(function(){
+					document.getElementById(element).animate([{background: originalColor}],{duration: changeBackDuration});
+					setTimeout(function(){
+						document.getElementById(element).style.background = originalColor;
+					}, changeBackDuration);
+				}, hightlightDuration);
+			}, changeToDuration); 
+		}
+
+		window.onload = function() {
+			// Update timer when page is loaded
+			updateTime();
+			// Do fadein when page is loaded
+			var fadeInDuration = 400;
+			document.getElementById("bodyCover").animate([{opacity: 0}], {duration: fadeInDuration})
+			document.getElementById("topMenu").animate([{opacity: 1}], {duration: fadeInDuration})
+			setTimeout(function(){
+				document.getElementById("bodyCover").style.opacity = 0;
+				document.getElementById("topMenu").style.opacity = 1;
+			}, fadeInDuration);
+		}
+
+		// Timer update every second
+		window.setInterval(updateTime, 500)
+
+		// Timer update function
+		var digitList = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+		function updateTime() {
+			var time = moment().format("HHmmss");
+			document.getElementById("h1").className = digitList[time[0]];
+			document.getElementById("h2").className = digitList[time[1]];
+			document.getElementById("m1").className = digitList[time[2]];
+			document.getElementById("m2").className = digitList[time[3]];
+			document.getElementById("s1").className = digitList[time[4]];
+			document.getElementById("s2").className = digitList[time[5]];
+		}
+	</script>
+</body>
+
+</html>
