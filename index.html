@@ -49,8 +49,9 @@
 		}
 
 		/* Image cannot be properly displayed on Android devices, setting up a dark background instead */
+		/* Problem solved by using a server to host the page. Apperantly currently Android devices cannot read from local files */
 		body {
-			background-image: url('resources/M200.jpg'); 
+			background-image: url('resources/background.jpg'); 
 			background-repeat: no-repeat;
 			background-position: center;
 			background-attachment: fixed;
