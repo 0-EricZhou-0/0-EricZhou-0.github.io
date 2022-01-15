@@ -49,7 +49,7 @@
 		}
 
 		/* Image cannot be properly displayed on Android devices, setting up a dark background instead */
-		/* Problem solved by using a server to host the page. Apperantly currently Android devices cannot read from local files */
+		/* Problem solved by using a server to host the page. Apparently currently Android devices cannot read from local files */
 		body {
 			background-image: url('resources/background.jpg'); 
 			background-repeat: no-repeat;
@@ -66,7 +66,7 @@
 			background-size: cover;
 		}
 
-		/* Used on background fadein */
+		/* Used on background fade-in */
 		#bodyCover {
 			top: 0px;
 			right: 0px;
@@ -193,11 +193,11 @@
 			var originalColor = "transparent";
 			var changeToColor = '#6495ED';
 			var changeToDuration = 100;
-			var hightlightDuration = 800;
+			var highlightDuration = 800;
 			var changeBackDuration = 200;
 			// Scroll to position
 			document.querySelector("#" + element).scrollIntoView({ behavior: "smooth", block: "center"});
-			// Hightlight struct
+			// Highlight struct
 			document.getElementById(element).animate([{background: changeToColor}],{duration: changeToDuration});
 			setTimeout(function(){
 				document.getElementById(element).style.background = changeToColor;
@@ -206,14 +206,14 @@
 					setTimeout(function(){
 						document.getElementById(element).style.background = originalColor;
 					}, changeBackDuration);
-				}, hightlightDuration);
+				}, highlightDuration);
 			}, changeToDuration); 
 		}
 
 		window.onload = function() {
 			// Update timer when page is loaded
 			updateTime();
-			// Do fadein when page is loaded
+			// Do fade-in when page is loaded
 			var fadeInDuration = 400;
 			document.getElementById("bodyCover").animate([{opacity: 0}], {duration: fadeInDuration})
 			document.getElementById("topMenu").animate([{opacity: 1}], {duration: fadeInDuration})

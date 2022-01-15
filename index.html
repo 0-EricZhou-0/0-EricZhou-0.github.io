@@ -49,7 +49,7 @@
 		}
 
 		/* Image cannot be properly displayed on Android devices, setting up a dark background instead */
-		/* Problem solved by using a server to host the page. Apperantly currently Android devices cannot read from local files */
+		/* Problem solved by using a server to host the page. Apparently currently Android devices cannot read from local files */
 		body {
 			background-image: url('resources/background.jpg'); 
 			background-repeat: no-repeat;
@@ -66,7 +66,7 @@
 			background-size: cover;
 		}
 
-		/* Used on background fadein */
+		/* Used on background fade-in */
 		#bodyCover {
 			top: 0px;
 			right: 0px;
@@ -196,28 +196,29 @@
 				<div id="linksContainer">
 					<a href="https://www.google.com/">Google</a><br>
 					<a href="https://translate.google.com/">Google Translate</a><br>
+					<a href="https://www.gradescope.com">Gradescope</a><br>
 					<a href="https://leetcode.com/problemset/all/">Leetcode</a><br>
 					<a href="http://gen.lib.rus.ec/">Library Genesis</a><br>
 					<a href="https://mediaspace.illinois.edu/">Mediaspace</a><br>
-					<a href="https://learn.illinois.edu">Moodle</a><br>
 				</div>
 			</div>
 
 			<div id="column" style="width: 20%; user-select: none;">
-				<b>O-S</b><br>
+				<b>M-P</b><br>
 				<div id="linksContainer">
+					<a href="https://learn.illinois.edu">Moodle</a><br>
 					<a href="https://www.office.com/?auth=2">Office 365</a><br>
 					<a href="https://one.illinois.edu/">OneIllinois</a><br>
 					<a href="https://outlook.office.com/mail/inbox">Outlook</a><br>
 					<a href="https://piazza.com">Piazza</a><br>
 					<a href="https://prairielearn.engr.illinois.edu/pl/">PrairieLearn</a><br>
-					<a href="https://apps.uillinois.edu/">Self Service</a><br>
 				</div>
 			</div>
 
 			<div id="column" style="width: 20%; user-select: none;">
-				<b>T-Z</b><br>
+				<b>S-Z</b><br>
 				<div id="linksContainer">
+					<a href="https://apps.uillinois.edu/">Self Service</a><br>
 					<a href="https://my.ece.illinois.edu/timetracker">Time Tracker</a><br>
 					<a href="https://americancampus.force.com/s/login/">Tower@3rd</a><br>
 					<a href="https://webstore.illinois.edu/home/">Wordpress</a><br>
@@ -328,6 +329,14 @@
 					</div>
 				</div>
 				<div id="column" style="width: 20%">
+					<b>ECE 342</b><br>
+					<div id="linksContainer">
+						<a href="https://www.gradescope.com/courses/352525">Gradescope</a><br>
+					</div>
+				</div>
+			</div><div style="width:100%; height: 10px"></div>
+			<div id="row" style="width: 100%; display: flex;">
+				<div id="column" style="width: 20%">
 					<b>ECE 374</b><br>
 					<div id="linksContainer">
 						<a href="https://illinoisedu.instructure.com/courses/13237">Course Website</a><br>
@@ -336,8 +345,6 @@
 						<a href="http://jeffe.cs.illinois.edu/teaching/algorithms/">Practice Problems</a><br>
 					</div>
 				</div>
-			</div><div style="width:100%; height: 10px"></div>
-			<div id="row" style="width: 100%; display: flex;">
 				<div id="column" style="width: 20%">
 					<b>ECE 385</b><br>
 					<div id="linksContainer">
@@ -376,6 +383,8 @@
 						<a href="https://illinois.zoom.us/j/84428766067?pwd=bFVNYXZ1d293U0JDb0xQYy96NjgxZz09">Zoom Lecture (pw:108210)</a><br>
 					</div>
 				</div>
+			</div><div style="width:100%; height: 10px"></div>
+			<div id="row" style="width: 100%; display: flex;">
 				<div id="column" style="width: 20%">
 					<b>ECE 486</b><br>
 					<div id="linksContainer">
@@ -508,11 +517,11 @@
 			var originalColor = "transparent";
 			var changeToColor = '#6495ED';
 			var changeToDuration = 100;
-			var hightlightDuration = 800;
+			var highlightDuration = 800;
 			var changeBackDuration = 200;
 			// Scroll to position
 			document.querySelector("#" + element).scrollIntoView({ behavior: "smooth", block: "center"});
-			// Hightlight struct
+			// Highlight struct
 			document.getElementById(element).animate([{background: changeToColor}],{duration: changeToDuration});
 			setTimeout(function(){
 				document.getElementById(element).style.background = changeToColor;
@@ -521,14 +530,14 @@
 					setTimeout(function(){
 						document.getElementById(element).style.background = originalColor;
 					}, changeBackDuration);
-				}, hightlightDuration);
+				}, highlightDuration);
 			}, changeToDuration); 
 		}
 
 		window.onload = function() {
 			// Update timer when page is loaded
 			updateTime();
-			// Do fadein when page is loaded
+			// Do fade-in when page is loaded
 			var fadeInDuration = 400;
 			document.getElementById("bodyCover").animate([{opacity: 0}], {duration: fadeInDuration})
 			document.getElementById("topMenu").animate([{opacity: 1}], {duration: fadeInDuration})
