@@ -75,8 +75,7 @@ class Subject:
 		subjects = sorted(Subject.subjects.keys())
 		res = ""
 		for subject in subjects:
-			res += """\t\t<button onclick='goToAndHighlight("{0}");'>{0}</button><br>\n"""\
-					.format(subject)
+			res += f"""\t\t<button onclick='goToAndHighlight("{subject}");'>{subject}</button><br>\n"""
 		return res[:-1]
 
 	@staticmethod
@@ -84,8 +83,7 @@ class Subject:
 		subjects = sorted(Subject.subjects.keys())
 		res = ""
 		for name in subjects:
-			res += """\t\t<div id="{}" style="height: 100%; width: 100%; display: flex; flex-wrap: wrap; user-select: none;">\n"""\
-					.format(name)
+			res += f"""\t\t<div id="{name}" style="height: 100%; width: 100%; display: flex; flex-wrap: wrap; user-select: none;">\n"""
 			subClasses = Subject.subjects[name].getSubClasses()
 			subClasses = sorted(subClasses, key=lambda item : item.getClassNumber())
 			length = len(subClasses)
@@ -102,12 +100,10 @@ class Subject:
 						preferredName = name
 					else:
 						preferredName = currentClass.getAlternativeName()
-					res += """\t\t\t\t<div id="column" style="width: {}%">\n\t\t\t\t\t<b>{} {}</b><br>\n"""\
-							.format(floor(100 / colNum), preferredName, currentClass.getClassNumber())
+					res += f"""\t\t\t\t<div id="column" style="width: {floor(100 / colNum)}%">\n\t\t\t\t\t<b>{preferredName} {currentClass.getClassNumber()}</b><br>\n"""
 					res += """\t\t\t\t\t<div id="linksContainer">\n"""
 					for k in range(len(links)):
-						res += """\t\t\t\t\t\t<a href="{}">{}</a><br>\n"""\
-								.format(links[k][1], links[k][0])
+						res += f"""\t\t\t\t\t\t<a href="{links[k][1]}">{links[k][0]}</a><br>\n"""
 					res += """\t\t\t\t\t</div>\n\t\t\t\t</div>\n"""
 				res += """\t\t\t</div><div style="width:100%; height: 10px"></div>\n"""
 			res += """\t\t</div><hr>\n\n"""
@@ -165,12 +161,10 @@ class QuickLink:
 		for i in range(colNum):
 			start = i * rowNum
 			end = min((i + 1) * rowNum, length)
-			res += """\t\t\t<div id="column" style="width: {}%; user-select: none;">\n\t\t\t\t<b>{}-{}</b><br>\n"""\
-					.format(floor(100 / colNum), sortedList[start][0][0], sortedList[end - 1][0][0])
+			res += f"""\t\t\t<div id="column" style="width: {floor(100 / colNum)}%; user-select: none;">\n\t\t\t\t<b>{sortedList[start][0][0]}-{sortedList[end - 1][0][0]}</b><br>\n"""
 			res += """\t\t\t\t<div id="linksContainer">\n"""
 			for j in range(start, end):
-				res += """\t\t\t\t\t<a href="{}">{}</a><br>\n"""\
-						.format(sortedList[j][1], sortedList[j][0])
+				res += f"""\t\t\t\t\t<a href="{sortedList[j][1]}">{sortedList[j][0]}</a><br>\n"""
 			res += """\t\t\t\t</div>\n\t\t\t</div>\n\n"""
 		return res[:-2]
 	
