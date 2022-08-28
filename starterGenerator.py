@@ -96,7 +96,8 @@ class Subject:
 				res += """\t\t\t<div id="row" style="width: 100%; display: flex;">\n"""
 				for j in range(start, end):
 					currentClass : Class = subClasses[j]
-					links = currentClass.getSortedLinks()
+					links = currentClass.getLinks()
+					# links = currentClass.getSortedLinks()
 					if (currentClass.getAlternativeName() == ""):
 						preferredName = name
 					else:
@@ -129,6 +130,9 @@ class Class:
 	
 	def getClassNumber(self):
 		return self.__number
+
+	def getLinks(self):
+		return list(self.__urls.items())
 
 	def getSortedLinks(self):
 		return sorted(self.__urls.items(), key=lambda item : item[0].lower())
